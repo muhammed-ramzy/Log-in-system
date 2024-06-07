@@ -168,7 +168,7 @@ function alreadyExist(email) {
 
     return exist;
 }
-
+ 
 //Checking if the log in credentials are correct
 function isMember(email, password) {
 
