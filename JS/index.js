@@ -170,7 +170,7 @@ function isMember(email, password) {
 
     //Checking if the email exists
     for (let i = 0; i < credentials.length; i++) {
-        if (credentials[i].signUpEmail == email) {
+        if (credentials[i].signUpEmail.toLowerCase() == email.toLowerCase()) {
             exist = true
             index = i;
         }
