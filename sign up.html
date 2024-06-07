@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quotes</title>
+
+    <!-- FontAwesome icons css file -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- Bootstrap css file -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- My Animaition css file -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- My Media Query css file -->
+    <link rel="stylesheet" href="css/media.css">
+    <!-- My Main CSS file -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="body-bg-color vh-100 main-font-family">
+    <div class="container pt-5">
+        <div class="card text-center p-5 w-75 m-auto card-shadow body-bg-color">
+            <h1 class="header-font-color my-header-fs fw-bold mb-3">Smart Login System</h1>
+            <input id="signUpName" type="text" class="form-control mb-3 bg-transparent" placeholder="Enter your name">
+            <input id="signUpEmail" type="email" class="form-control mb-3 bg-transparent" placeholder="Enter your email">
+            <input id="signUpPassword" type="password" class="form-control mb-3 bg-transparent" placeholder="Enter your password">
+            <p id="success" class="text-success d-none">Success</p>
+            <p id="emailExist" class="text-danger d-none">email already exists</p>
+            <p id="inputsRequired" class="text-danger d-none">All inputs is required</p>
+            <button id="signUpBtn" class="btn btn-outline-info my-3">Sign Up</button>
+            <p class="fw-medium">You have an account? <a href="index.html" class="link-underline-opacity-0 link-underline-light link-underline-opacity-100-hover">Signin</a></p>
+        </div>
+    </div>
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/index.js"></script>
+</body>
+
+</html>

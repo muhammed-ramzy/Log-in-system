@@ -1,0 +1,163 @@
+/* ================= Start fonts ================= */
+@font-face {
+    font-family: 'Montserrat-R';
+    src: url('../webfonts/Montserrat-Regular.woff2') format('woff2'),
+        url('../webfonts/Montserrat-Regular.woff') format('woff'),
+        url('../webfonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins-R';
+    src: url('../webfonts/Poppins-Regular.woff2') format('woff2'),
+        url('../webfonts/Poppins-Regular.woff') format('woff'),
+        url('../webfonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    src: url('../webfonts/TitilliumWeb-Regular.woff2') format('woff2'),
+        url('../webfonts/TitilliumWeb-Regular.woff') format('woff'),
+        url('../webfonts/TitilliumWeb-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ================= End fonts ================= */
+
+:root {
+    /* Start Color classes */
+    --header-font-color: #17a2b8;
+    --body-bg-color: #24353f;
+    --bs-body-color: #fff;
+    /* End Color classes */
+
+    /* Start Font Variables */
+    --main-font-family: 'Titillium Web';
+    --second-ff: 'Montserrat-R';
+    --third-ff: 'Poppins-R';
+    /* End Font Variables */
+
+    /* Start Font sizes */
+    --my-main-fs: 1rem;
+    /* 16px */
+    --my-header-fs: 2.5rem;
+    /* 40px */
+    /* End Font sizes */
+}
+
+/* ================= Start Root Classes ================= */
+
+
+/* Start Font classes */
+
+.main-font-family {
+    font-family: var(--main-font-family);
+}
+
+.second-ff {
+    font-family: var(--second-ff);
+}
+
+.third-ff {
+    font-family: var(--third-ff);
+}
+
+/* End Font classes */
+
+
+
+/* Start font sizes classes */
+.my-main-fs {
+    font-size: var(--my-main-fs);
+}
+
+.my-header-fs {
+    font-size: var(--my-header-fs);
+}
+
+/* End font sizes classes */
+
+
+
+/* Start color classes */
+
+.header-font-color {
+    color: var(--header-font-color);
+}
+
+.body-bg-color {
+    background-color: var(--body-bg-color);
+}
+
+/* End color classes */
+
+/* Start shadow classes */
+.card-shadow {
+    box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+}
+
+/* End shadow classes */
+
+
+/* ================= End Root Classes ================= */
+
+
+
+
+/* ================== Start General Style  ================== */
+a {
+   color: unset;
+
+}
+
+/* ================== End General Style ================== */
+
+
+/* ================== Start nav Style ================== */
+.navbar
+{
+    box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+    --bs-navbar-toggler-icon-bg: url(data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E);
+}
+
+.navbar-toggler-icon
+{
+    background-image: url(../images/download.svg);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 1px;
+}
+/* ================== End nav Style ================== */
+
+/* ================== Start Card Style ================== */
+.form-control {
+    --bs-border-radius: 0.2rem;
+}
+
+input::placeholder {
+    color: #9e9f9f !important;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0 ;
+}
+
+.btn-outline-info {
+    --bs-btn-color: #17a2b8;
+    --bs-btn-border-color: #17a2b8;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #17a2b8;
+    --bs-btn-hover-border-color: #17a2b8;
+}
+/* ================== End Card Style ================== */
