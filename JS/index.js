@@ -5,6 +5,8 @@ var logInBtn = document.getElementById("logInBtn");
 // sign in messages
 var incorrectPassword = document.getElementById("incorrectPassword");
 var incorrectEmail = document.getElementById("incorrectEmail");
+var logInInputsRequired = document.getElementById("logInInputsRequired");
+var incorrectEmailPassword = document.getElementById("incorrectEmailPassword");
 
 
 // Sign up inputs
@@ -80,14 +82,16 @@ function LogIn() {
             return true;
         }
         else {
-
             return false;
         }
-
-
     }
     else {
-
+        if (signInEmail.value == "" || signInPassword.value == "") {
+            logInInputsRequired.classList.replace("d-none", "d-block");
+        }
+        else {
+            incorrectEmailPassword.classList.replace("d-none", "d-block");
+        }
         return false;
     }
 }
@@ -97,6 +101,8 @@ function LogIn() {
 function removeLogInMessages() {
     incorrectEmail.classList.replace("d-block", "d-none");
     incorrectPassword.classList.replace("d-block", "d-none");
+    logInInputsRequired.classList.replace("d-block", "d-none");
+    incorrectEmailPassword.classList.replace("d-block", "d-none");
 }
 function removeSignUpMessages() {
     success.classList.replace("d-block", "d-none");
