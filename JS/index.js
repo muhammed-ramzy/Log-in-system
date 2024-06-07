@@ -265,6 +265,12 @@ document.addEventListener('DOMContentLoaded', function () {
         tempName = tempName.replace(/"/g, "");
         welcomeName.innerHTML = tempName;
     }
+    // For git hub
+    if (window.location.pathname === '/Log-in-system/Welcome.html') {
+        var tempName = localStorage.getItem("userName");
+        tempName = tempName.replace(/"/g, "");
+        welcomeName.innerHTML = tempName;
+    }
 }
 )
 
