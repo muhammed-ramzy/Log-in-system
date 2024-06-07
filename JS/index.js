@@ -139,7 +139,7 @@ function validate(element) {
         signInPassword: /^[\w]+$/,
 
         // Sign up regex
-        signUpName: /^[\w]{4,}$/,
+        signUpName: /^[\w]+$/,
         signUpEmail: /^[\w]+@[a-zA-Z]+\.com$/i,
         signUpPassword: /^[\w]+$/
     }
