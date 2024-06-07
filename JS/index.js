@@ -260,16 +260,26 @@ if (logInBtn) {
 //==================== Welcome page ==================
 //Adding the name to the welcome page
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('Current pathname:', window.location.pathname);
     if (window.location.pathname === '/Welcome.html') {
         var tempName = localStorage.getItem("userName");
         tempName = tempName.replace(/"/g, "");
         welcomeName.innerHTML = tempName;
+    }
+    else
+    {
+        console.log("/Welcome.html is wrong");
     }
     // For git hub
     if (window.location.pathname === '/Log-in-system/Welcome.html') {
         var tempName = localStorage.getItem("userName");
         tempName = tempName.replace(/"/g, "");
         welcomeName.innerHTML = tempName;
+    }
+    else
+    {
+        
+        console.log("/Log-in-system/Welcome.html is wrong");
     }
 }
 )
