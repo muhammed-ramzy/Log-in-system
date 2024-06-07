@@ -17,8 +17,12 @@ var success = document.getElementById("success");
 var emailExist = document.getElementById("emailExist");
 var inputsRequired = document.getElementById("inputsRequired");
 
+// Wlecome message
+var welcomeName = document.getElementById("welcomeName");
+
 //The Array that holds all the credentials
 var credentials = [];
+var welcomeUserName;
 
 //Checking if there is memory stored in the local storage and if so we copy it
 if (localStorage.getItem("credentials") != null) {
@@ -32,31 +36,30 @@ function setLocalStorage() {
 //The sign up button function
 function addCredential() {
     removeSignUpMessages();
-    
+
     //Handling if the email already exists
     if (alreadyExist(signUpEmail.value)) {
         emailExist.classList.replace("d-none", "d-block");
         return;
     }
-    
+
     //if validations are ok, add a new credential
-    if (validate(signUpEmail) && validate(signUpPassword)  && validate(signUpName)) {
-        
+    if (validate(signUpEmail) && validate(signUpPassword) && validate(signUpName)) {
+
         //Creating object of the credential values to push into the array
         var credential = {
             signUpName: signUpName.value,
             signUpEmail: signUpEmail.value,
             signUpPassword: signUpPassword.value
         }
-        
+
         credentials.push(credential);
         setLocalStorage();
-        
+
         success.classList.replace("d-none", "d-block");
         removeSignUpValidationFormat();
     }
-    else
-    {
+    else {
         inputsRequired.classList.replace("d-none", "d-block");
         return;
     }
@@ -65,6 +68,7 @@ function addCredential() {
     removeSignUpValidationFormat();
 }
 
+
 //The log in button function
 function LogIn() {
 
@@ -72,19 +76,18 @@ function LogIn() {
     //Check if there is an invalid field
     if (validate(signInEmail) && validate(signInPassword)) {
         if (isMember(signInEmail.value, signInPassword.value)) {
-            console.log("exist");
-            console.log("valid ");
+            lookForUserName(signInEmail.value);
             return true;
         }
         else {
-            console.log("doesn't exist");
+
             return false;
         }
 
 
     }
     else {
-        console.log("is-invalid ");
+
         return false;
     }
 }
@@ -100,8 +103,7 @@ function removeSignUpMessages() {
     emailExist.classList.replace("d-block", "d-none");
     inputsRequired.classList.replace("d-block", "d-none");
 }
-function removeSignUpValidationFormat()
-{
+function removeSignUpValidationFormat() {
     signUpEmail.classList.remove("is-valid");
     signUpEmail.classList.remove("is-invalid");
 
@@ -111,8 +113,7 @@ function removeSignUpValidationFormat()
     signUpName.classList.remove("is-valid");
     signUpName.classList.remove("is-invalid");
 }
-function clearSignUpForm()
-{
+function clearSignUpForm() {
     signUpName.value = "";
     signUpEmail.value = "";
     signUpPassword.value = "";
@@ -190,6 +191,14 @@ function isMember(email, password) {
     }
 }
 
+function lookForUserName(email) {
+    for (let i = 0; i < credentials.length; i++) {
+        if (credentials[i].signUpEmail.toLowerCase() == email.toLowerCase()) {
+            localStorage.setItem("userName", JSON.stringify(credentials[i].signUpName));
+        }
+    }
+}
+
 //===============================================Event listeners=================================
 
 //================== sign up page ======================
@@ -241,4 +250,15 @@ if (logInBtn) {
     }
     )
 }
+
+//==================== Welcome page ==================
+//Adding the name to the welcome page
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.location.pathname === '/Welcome.html') {
+        var tempName = localStorage.getItem("userName");
+        tempName = tempName.replace(/"/g, "");
+        welcomeName.innerHTML = tempName;
+    }
+}
+)
 
